@@ -1,0 +1,103 @@
+@normalBorder:2px solid rgb(100,100,100);
+*{
+    box-sizing: border-box;
+}
+.BF_BasicBlock {
+    margin: 0;
+    display: block;
+    background-color: transparent;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0);
+    cursor: grabbing;
+    .BF_head {
+        background-color: rgb(221, 221, 221);
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-left: @normalBorder;
+        border-right: @normalBorder;
+        border-top: @normalBorder;
+        position: relative;
+        .BF_closeButton{
+            float: right;
+            margin-right: 4px;
+            cursor: pointer;
+            transition: 0.2s ease-in-out;
+            &:hover{
+                color: darkred;
+            }
+        }
+    }
+    .BF_body {
+        background-color: rgba(127, 197, 255, 0);
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        .BF_portArea {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .BF_PortDivDom {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                .BF_port{
+                    background-color: rgb(133, 133, 133);
+                    cursor: crosshair;
+                    transition: 0.2s ease-in-out;
+                    &:hover{
+                        background-color: darkmagenta;
+                    }
+                }
+                //不同类型的节点
+                .BF_port_type_1{//number
+                    background-color: rgb(156, 155, 73);
+                }
+                .BF_port_type_2{//text
+                    background-color: rgb(73, 156, 105);
+                }
+                .BF_port_type_3{//number
+                    background-color: rgb(130, 73, 156);
+                }
+                .BF_tag {
+                    margin-left: 4px;
+                    margin-right: 4px;
+                    min-width: 38px;
+                }
+                .BF_input {
+                    outline: none;
+                }
+            }
+        }
+        .BF_inPortArea {
+            background-color: rgba(131, 255, 127, 0);
+            align-items: flex-start;
+            .BF_PortDivDom{
+                justify-content: flex-start;
+                .BF_tag {
+                    text-align: left;
+                }
+            }
+        }
+        .BF_outPortArea {
+            background-color: rgba(255, 127, 255, 0);
+            align-items: flex-end;
+            .BF_PortDivDom{
+                justify-content: flex-end;
+                .BF_tag {
+                    text-align: right;
+                }
+            }
+        }
+    }
+    .BF_mask{
+        position: absolute;
+        pointer-events: none;
+        left: 0;
+        background-color: rgb(238, 238, 238);
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border-left: @normalBorder;
+        border-right: @normalBorder;
+        border-bottom: @normalBorder;
+    }
+}

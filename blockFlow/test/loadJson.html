@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./../lib/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="./../lib/main.css">
+    <script>
+        window.onload = function () {
+            createBlockFlowContainer(document.querySelector("#bfParent"));
+            inputJson(`
+            [{"title":"函数计算","position":{"x":485,"y":334},"size":{"width":200,"height":0},"inPorts":[{"tag":"f(x)=","disb":{"type":1,"placeHolder":"函数表达式"},"type":2},{"tag":"x=","disb":{"type":1,"placeHolder":"x"},"type":1}],"outPorts":[{"tag":"y","disb":{"type":2},"type":1}],"className":"defaultBlock","para":{},"inPortsDom":[],"outPortsDom":[],"maskDom":{},"blockDom":{},"headDom":{},"closeButtonDom":{},"bodyDom":{},"inPortAreaDom":{},"outPortAreaDom":{}},{"title":"RGB颜色","position":{"x":485,"y":335},"size":{"width":100,"height":0},"inPorts":[{"tag":"R","disb":{"type":2},"type":1},{"tag":"G","disb":{"type":2},"type":1},{"tag":"B","disb":{"type":2},"type":1}],"outPorts":[{"tag":"颜色","disb":{"type":2},"type":3}],"className":"defaultBlock","para":{},"inPortsDom":[],"outPortsDom":[],"maskDom":{},"blockDom":{},"headDom":{},"closeButtonDom":{},"bodyDom":{},"inPortAreaDom":{},"outPortAreaDom":{}}]            `);
+        }
+    </script>
+    <style>
+        #bfParent {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bfParent"></div>
+</body>
+
+</html>

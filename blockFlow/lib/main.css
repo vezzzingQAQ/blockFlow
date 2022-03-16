@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+}
+.BF_BasicBlock {
+  margin: 0;
+  display: block;
+  background-color: transparent;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: grabbing;
+}
+.BF_BasicBlock .BF_head {
+  background-color: #dddddd;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-left: 2px solid #646464;
+  border-right: 2px solid #646464;
+  border-top: 2px solid #646464;
+  position: relative;
+}
+.BF_BasicBlock .BF_head .BF_closeButton {
+  float: right;
+  margin-right: 4px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+.BF_BasicBlock .BF_head .BF_closeButton:hover {
+  color: darkred;
+}
+.BF_BasicBlock .BF_body {
+  background-color: rgba(127, 197, 255, 0);
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+.BF_BasicBlock .BF_body .BF_portArea {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.BF_BasicBlock .BF_body .BF_portArea .BF_PortDivDom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.BF_BasicBlock .BF_body .BF_portArea .BF_PortDivDom .BF_port {
+  background-color: #858585;
+  cursor: crosshair;
+  transition: 0.2s ease-in-out;
+}
+.BF_BasicBlock .BF_body .BF_portArea .BF_PortDivDom .BF_port:hover {
+  background-color: darkmagenta;
+}
+.BF_BasicBlock .BF_body .BF_portArea .BF_PortDivDom .BF_port_type_1 {
+  background-color: #9c9b49;
+}
+.BF_BasicBlock .BF_body .BF_portArea .BF_PortDivDom .BF_port_type_2 {
+  background-color: #499c69;
+}
+.BF_BasicBlock .BF_body .BF_portArea .BF_PortDivDom .BF_port_type_3 {
+  background-color: #82499c;
+}
+.BF_BasicBlock .BF_body .BF_portArea .BF_PortDivDom .BF_tag {
+  margin-left: 4px;
+  margin-right: 4px;
+  min-width: 38px;
+}
+.BF_BasicBlock .BF_body .BF_portArea .BF_PortDivDom .BF_input {
+  outline: none;
+}
+.BF_BasicBlock .BF_body .BF_inPortArea {
+  background-color: rgba(131, 255, 127, 0);
+  align-items: flex-start;
+}
+.BF_BasicBlock .BF_body .BF_inPortArea .BF_PortDivDom {
+  justify-content: flex-start;
+}
+.BF_BasicBlock .BF_body .BF_inPortArea .BF_PortDivDom .BF_tag {
+  text-align: left;
+}
+.BF_BasicBlock .BF_body .BF_outPortArea {
+  background-color: rgba(255, 127, 255, 0);
+  align-items: flex-end;
+}
+.BF_BasicBlock .BF_body .BF_outPortArea .BF_PortDivDom {
+  justify-content: flex-end;
+}
+.BF_BasicBlock .BF_body .BF_outPortArea .BF_PortDivDom .BF_tag {
+  text-align: right;
+}
+.BF_BasicBlock .BF_mask {
+  position: absolute;
+  pointer-events: none;
+  left: 0;
+  background-color: #eeeeee;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-left: 2px solid #646464;
+  border-right: 2px solid #646464;
+  border-bottom: 2px solid #646464;
+}
