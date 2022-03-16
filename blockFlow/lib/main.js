@@ -18,6 +18,13 @@ const BF_PORT_INPUT_TYPE = {
     input: 1,
     none: 2,
 }
+
+const BF_BLOCK_TYPE = {
+    function: 1,
+    draw: 2,
+    input: 3,
+    trans: 4
+}
 //创建容器
 class BlockFlowContainer {
     constructor(parentDom) {
@@ -115,6 +122,7 @@ class BF_BasicBlock {
         inPorts = [],
         outPorts = [],
         className = "defaultBlock",
+        blockType = BF_BLOCK_TYPE.function,
         para = {}
     ) {
         this.title = title;
@@ -123,6 +131,7 @@ class BF_BasicBlock {
         this.inPorts = inPorts;
         this.outPorts = outPorts;
         this.className = className;
+        this.blockType = blockType;
         this.para = para;
         this.blockDom;
         this.headDom;
@@ -151,7 +160,7 @@ class BF_BasicBlock {
         }
         //添加基础元素
         this.blockDom = document.createElement("div");
-        this.blockDom.classList.add("BF_BasicBlock")
+        this.blockDom.classList.add("BF_BasicBlock");
         this.blockDom.classList.add(this.className);
         this.blockDom.style.left = this.position.x + "px";
         this.blockDom.style.top = this.position.y + "px";
@@ -195,6 +204,7 @@ class BF_BasicBlock {
         //添加标题栏
         this.headDom = document.createElement("div");
         this.headDom.classList.add("BF_head");
+        this.headDom.classList.add("BF_block_type_" + this.blockType);
         this.headDom.style.width = this.size.width + "px";
         this.headDom.style.height = BF_HEAD_HEIGHT + "px";
         this.headDom.style.lineHeight = BF_HEAD_HEIGHT + "px";
@@ -239,6 +249,7 @@ class BF_BasicBlock {
         //添加遮罩层
         this.maskDom = document.createElement("div");
         this.maskDom.classList.add("BF_mask");
+        this.maskDom.classList.add("BF_block_type_" + this.blockType);
         this.maskDom.style.width = this.size.width + "px";
         this.maskDom.style.height = currentHeight + "px";
         this.maskDom.style.marginLeft = BF_BODY_PADDING + "px";
@@ -312,9 +323,10 @@ function createBFBasicBlock(
     size = { width: 200, height: 100 },
     inPorts = [],
     outPorts = [],
-    className = "defaultBlock"
+    className = "defaultBlock",
+    blockType = BF_BLOCK_TYPE.function
 ) {
-    let currentBlock = new BF_BasicBlock(title, position, size, inPorts, outPorts, className);
+    let currentBlock = new BF_BasicBlock(title, position, size, inPorts, outPorts, className, blockType);
     window.blockList.push(currentBlock);
     currentBlock.createDom();
     return (currentBlock);

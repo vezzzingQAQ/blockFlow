@@ -1,5 +1,4 @@
-@normalBorder:2px solid rgb(100,100,100);
-*{
+* {
     box-sizing: border-box;
 }
 .BF_BasicBlock {
@@ -13,16 +12,16 @@
         background-color: rgb(221, 221, 221);
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
-        border-left: @normalBorder;
-        border-right: @normalBorder;
-        border-top: @normalBorder;
+        border-left: 2px solid rgb(100,100,100);
+        border-right: 2px solid rgb(100,100,100);
+        border-top: 2px solid rgb(100,100,100);
         position: relative;
-        .BF_closeButton{
+        .BF_closeButton {
             float: right;
             margin-right: 4px;
             cursor: pointer;
             transition: 0.2s ease-in-out;
-            &:hover{
+            &:hover {
                 color: darkred;
             }
         }
@@ -40,22 +39,25 @@
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-                .BF_port{
+                .BF_port {
                     background-color: rgb(133, 133, 133);
                     cursor: crosshair;
                     transition: 0.2s ease-in-out;
-                    &:hover{
+                    &:hover {
                         background-color: darkmagenta;
                     }
                 }
                 //不同类型的节点
-                .BF_port_type_1{//number
+                .BF_port_type_1 {
+                    //number
                     background-color: rgb(156, 155, 73);
                 }
-                .BF_port_type_2{//text
+                .BF_port_type_2 {
+                    //text
                     background-color: rgb(73, 156, 105);
                 }
-                .BF_port_type_3{//number
+                .BF_port_type_3 {
+                    //number
                     background-color: rgb(130, 73, 156);
                 }
                 .BF_tag {
@@ -71,7 +73,7 @@
         .BF_inPortArea {
             background-color: rgba(131, 255, 127, 0);
             align-items: flex-start;
-            .BF_PortDivDom{
+            .BF_PortDivDom {
                 justify-content: flex-start;
                 .BF_tag {
                     text-align: left;
@@ -81,7 +83,7 @@
         .BF_outPortArea {
             background-color: rgba(255, 127, 255, 0);
             align-items: flex-end;
-            .BF_PortDivDom{
+            .BF_PortDivDom {
                 justify-content: flex-end;
                 .BF_tag {
                     text-align: right;
@@ -89,15 +91,28 @@
             }
         }
     }
-    .BF_mask{
+    .BF_mask {
         position: absolute;
         pointer-events: none;
         left: 0;
         background-color: rgb(238, 238, 238);
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
-        border-left: @normalBorder;
-        border-right: @normalBorder;
-        border-bottom: @normalBorder;
+        border-left: 2px solid rgb(100,100,100);
+        border-right: 2px solid rgb(100,100,100);
+        border-bottom: 2px solid rgb(100,100,100);
     }
 }
+.BF_block_type_1 {
+    border-color: rgb(49, 23, 75) !important;
+}
+.BF_block_type_2 {
+    border-color: rgb(21, 60, 70) !important;
+}
+.BF_block_type_3 {
+    border-color: rgb(16, 65, 24) !important;
+}
+.BF_block_type_4 {
+    border-color: rgb(65, 32, 16) !important;
+}
+
